@@ -42,6 +42,20 @@
     <script src="https://cdn.jsdelivr.net/npm/protvista-manager@latest/dist/protvista-manager.js" charset="utf-8" defer></script>
 
     <script src="dist/protvista-uniprot.js" charset="utf-8"></script>
+
+    <script>
+        for  (const track of document.querySelectorAll('protvista-uniprot')){
+            track.addEventListener(
+                'click',
+                e => {
+                    e.preventDefault(true)
+                    console.log('click');
+                    console.dir(e.target);
+                    console.dir(e);
+                }
+            );
+        }
+    </script>
 </body>
 
 </html>

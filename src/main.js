@@ -38,7 +38,7 @@ const loadComponent = function () {
                 <protvista-navigation length="${this._sequenceLength}"></protvista-navigation>
                 <protvista-sequence length="${this._sequenceLength}"></protvista-sequence>
                 ${categories.map(category =>
-                    html`
+                html`
                         <div class="category-label" data-category-toggle="${category.name}">
                             ${category.label}
                         </div>
@@ -53,9 +53,8 @@ const loadComponent = function () {
                                 ${this.getTrack(track.trackType, category.adapter, category.url, track.filter)}
                             </div>`)}
                     `
-                )}
+            )}
                 <protvista-sequence id="seq1" length="${this._sequenceLength}"></protvista-sequence>
-                <uuw-litemol-component accession="${this._accession}"></uuw-litemol-component>
             </protvista-manager>`;
             render(mainHtml(), this);
             this.querySelectorAll('.category-label').forEach(cat => {
@@ -122,7 +121,6 @@ const loadComponent = function () {
                     return html`<protvista-variation-filter></protvista-variation-filter`;
             }
         }
-
         getTrack(trackType, adapter, url, trackTypes, layout = '') {
             // TODO Allow injection of static content into templates https://github.com/Polymer/lit-html/issues/78
             switch (trackType) {
